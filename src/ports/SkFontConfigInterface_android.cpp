@@ -908,8 +908,3 @@ SkTypeface* SkCreateTypefaceForScript(hb_script_t script, SkTypeface::Style styl
 
 #endif
 
-///////////////////////////////////////////////////////////////////////////////
-
-SkFontMgr* SkFontMgr::Factory() {
-    return NULL;
-}
