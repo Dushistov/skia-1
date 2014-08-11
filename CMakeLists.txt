@@ -670,6 +670,7 @@ if($ENV{TARGET} MATCHES ".*android.*")
 
   set_prefix(SKIA_PORTS_SRC src/ports/
     SkDebug_android.cpp
+#    SkFontMgr_android.cpp
     SkFontConfigInterface_android.cpp
     SkFontConfigParser_android.cpp
     SkFontHost_FreeType.cpp

@@ -128,10 +128,8 @@ public:
         // TODO? make this lazy
         for (int i = 0; i < family->fFontFiles.count(); ++i) {
             const SkString& fileName = family->fFontFiles[i].fFileName;
-
             SkString pathName;
             get_path_for_sys_fonts(&pathName, fileName);
-
             SkAutoTUnref<SkStream> stream(SkStream::NewFromFile(pathName.c_str()));
             if (!stream.get()) {
                 DEBUG_FONT(("---- SystemFonts[%d] file=%s (NOT EXIST)", i, filename.c_str()));
