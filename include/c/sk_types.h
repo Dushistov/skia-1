@@ -25,6 +25,7 @@
 
 #if !defined(SK_API)
     #if defined(SKIA_DLL)
+#error "Expecting static linking, not tested"
         #if defined(_MSC_VER)
             #if SKIA_IMPLEMENTATION
                 #define SK_API __declspec(dllexport)
