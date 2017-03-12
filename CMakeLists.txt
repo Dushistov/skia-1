@@ -81,6 +81,7 @@ endif()
 include_directories(
   include/config
   include/core
+  include/c
   include/effects
   include/gpu
   include/images
@@ -541,6 +542,11 @@ set_prefix(SKIA_THIRDPARTY_SRC third_party/
   etc1/etc1.cpp
   ktx/ktx.cpp
   )
+set_prefix(SKIA_C_SRC src/c/
+  sk_effects.cpp
+  sk_paint.cpp
+  sk_surface.cpp
+  )
 
 if(APPLE)
   add_definitions(-DSK_USE_POSIX_THREADS)
@@ -709,6 +715,7 @@ set(SKIA_SRC
   ${SKIA_THIRDPARTY_SRC}
   ${SKIA_UTILS_SRC}
   ${SKIA_UTILS_PLATFORM_SRC}
+  ${SKIA_C_SRC}
   )
 
 if($ENV{TARGET} MATCHES "(i686|x86_64)-.*")
