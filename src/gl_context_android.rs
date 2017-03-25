@@ -7,7 +7,9 @@
 
 use euclid::size::Size2D;
 use egl::egl;
+use gleam::gl;
 use std::ptr;
+use std::rc::Rc;
 
 pub struct PlatformDisplayData {
     pub display: egl::EGLDisplay,
@@ -28,7 +30,8 @@ impl Drop for GLPlatformContext {
 }
 
 impl GLPlatformContext {
-    pub fn new(platform_display_data: PlatformDisplayData,
+    pub fn new(_: Rc<gl::Gl>,
+               platform_display_data: PlatformDisplayData,
                size: Size2D<i32>)
                -> Option<GLPlatformContext> {
         let config_attributes = [
