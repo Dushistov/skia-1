@@ -38,13 +38,24 @@ else()
   endif()
 endif()
 
+
+if($ENV{TARGET} MATCHES ".*android.*")
+  add_definitions(
+  -DSK_A32_SHIFT=24
+  -DSK_R32_SHIFT=0
+  -DSK_G32_SHIFT=8
+  -DSK_B32_SHIFT=16
+  -DGR_GL_USE_NEW_SHADER_SOURCE_SIGNATURE=1
+  )
+else()
 add_definitions(
   -DSK_A32_SHIFT=24
   -DSK_R32_SHIFT=16
   -DSK_G32_SHIFT=8
   -DSK_B32_SHIFT=0
   -DGR_GL_USE_NEW_SHADER_SOURCE_SIGNATURE=1
-)
+  )
+endif()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_definitions(-Wno-c++11-extensions)
