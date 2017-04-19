@@ -423,6 +423,16 @@ sk_canvas_t* sk_surface_get_canvas(sk_surface_t* csurf) {
     return (sk_canvas_t*)surf->getCanvas();
 }
 
+int sk_surface_width(const sk_surface_t* csurf) {
+  const SkSurface* surf = (const SkSurface*)csurf;
+  return surf->width();
+}
+
+int sk_surface_height(const sk_surface_t* csurf) {
+  const SkSurface* surf = (const SkSurface*)csurf;
+  return surf->height();
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 sk_picture_recorder_t* sk_picture_recorder_new() {
