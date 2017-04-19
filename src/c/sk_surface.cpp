@@ -433,6 +433,11 @@ int sk_surface_height(const sk_surface_t* csurf) {
   return surf->height();
 }
 
+void sk_surface_draw(sk_surface_t* csurf, sk_canvas_t* ccanvas, float x, float y, const sk_paint_t* cpaint) {
+  SkSurface* surf = reinterpret_cast<SkSurface*>(csurf);
+  surf->draw(AsCanvas(ccanvas), x, y, AsPaint(cpaint));
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 sk_picture_recorder_t* sk_picture_recorder_new() {

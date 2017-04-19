@@ -70,6 +70,7 @@ SK_API sk_image_t* sk_surface_new_image_snapshot(sk_surface_t*);
 
 SK_API int sk_surface_width(const sk_surface_t* csurf);
 SK_API int sk_surface_height(const sk_surface_t* csurf);
+SK_API void sk_surface_draw(sk_surface_t*, sk_canvas_t*, float, float, const sk_paint_t*);
 
 SK_C_PLUS_PLUS_END_GUARD
 
