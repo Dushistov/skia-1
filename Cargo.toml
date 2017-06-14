@@ -28,7 +28,7 @@ name = "skia"
 cmake = "0.1"
 
 [dependencies]
-euclid = "0.11"
+euclid = "0.14.4"
 gleam = "0.4"
 libc = "0.2"
 expat-sys = "2.1.1"
