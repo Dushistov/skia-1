@@ -130,6 +130,11 @@ void sk_paint_set_text_size(sk_paint_t *paint, float ts)
     AsPaint(paint)->setTextSize(ts);
 }
 
+float sk_paint_get_text_size(sk_paint_t *paint)
+{
+  return AsPaint(paint)->getTextSize();
+}
+
 void sk_paint_measure_text(const sk_paint_t *paint, const char *text, size_t text_len, sk_rect_t *bounds)
 {
    SkRect rect = SkRect::MakeEmpty();
